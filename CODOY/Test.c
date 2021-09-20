@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "Exercise1.h"
+#include "CircularArrayQ.h"
 
 /** \fn int get_queue_length(CircularArrayQueue list);
  *  \brief Get the number of elements in the current queue.
@@ -74,7 +75,24 @@ PersonDynamicArrayList remove_all_males(CircularArrayQueue *list) {
 
 int main(void) 
 {
-    // To do code logic here.
+    Person p;
+    bool retval;
+    CircularArrayQueue list;
+    PersonDynamicArrayList m;
+    PersonLinkedList females;
+    
+    list = create_array_queue();
+    init_array_queue(&list);
+
+    p = create_array_queue("Roe", 'F', "Cebu");
+    retval = enqueue(&list, p);
+
+    p = create_array_queue("Ann", 'F', "Cebu");
+    retval = enqueue(&list, p);
+
+    p = create_array_queue("Row", 'M', "Carcar");
+    retval = enqueue(&list, p);
+
     return 0;
 }
 
